@@ -20,8 +20,7 @@ _`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`
 
 [Откройте мастер-репозиторий](https://github.com/htmlacademy-htmlcss/2290319-sedona-36) и нажмите кнопку «Fork» в правом верхнем углу. Репозиторий из Академии скопируется в ваш аккаунт.
 
-<img width="769" alt="" src="https://user-images.githubusercontent.com/10909/29037949-67a635d6-7bae-11e7-9f2f-1a48fde231bПавел
-Позняк9.jpg">
+<img width="769" alt="" src="https://user-images.githubusercontent.com/10909/29037949-67a635d6-7bae-11e7-9f2f-1a48fde231b9.jpg">
 
 Получится вот так:
 
