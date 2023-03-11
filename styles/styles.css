@@ -96,6 +96,10 @@ body {
   background-color: #7db54f;
 }
 
+.button-subscribe {
+  border-radius: 0 4px 4px 0;
+}
+
 /* Header */
 .page-header {
   padding: 0 70px;
@@ -107,7 +111,9 @@ body {
 }
 
 .navigation-logo {
+  display: flex;
   margin-right: 30px;
+  margin-bottom: -6px;
 }
 
 .navigation-list {
@@ -117,6 +123,10 @@ body {
   padding: 0;
 
   list-style: none;
+}
+
+.navigation-item {
+  display: flex;
 }
 
 .navigation-link {
@@ -130,11 +140,16 @@ body {
   text-decoration: none;
 }
 
+.navigation-link-current {
+  border-bottom: 2px solid #756257;
+}
+
 .user-navigation {
   margin-left: auto;
 }
 
 .user-navigation-item {
+  display: flex;
   min-width: 44px;
   min-height: 64px;
 }
@@ -144,9 +159,20 @@ body {
   padding: 22px 12px;
 }
 
+.user-navigation-search {
+  background-image: url("../images/svg/icons/loupe.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-navigation-favorite {
+  background-image: url("../images/svg/icons/favorite.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .user-navigation-want {
-  margin: 20px 14px;
-  margin-right: 0;
+  align-self: center;
   padding: 8px 50px;
 }
 
@@ -302,6 +328,7 @@ body {
   color: #333333;
 
   margin: 0;
+  margin-bottom: 81px;
 }
 
 .recommendations {
@@ -323,6 +350,29 @@ body {
   background-image: url("../images/background/subscribe-background.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
+}
+
+.subscribe-form {
+  display: flex;
+  width: 684px;
+}
+
+.subscribe-label {
+  display: flex;
+  flex-grow: 1;
+}
+
+.subscribe-field {
+  flex-grow: 1;
+  padding: 14px 20px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  background-color: #f2f2f2;
+
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 /* Footer */
@@ -348,7 +398,21 @@ body {
 
 .footer-social-link {
   display: block;
-  padding: 10px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-social-vk {
+  background-image: url("../images/svg/icons/social-vk.svg");
+}
+
+.footer-social-telegram {
+  background-image: url("../images/svg/icons/social-telegram.svg");
+}
+
+.footer-social-youtube {
+  background-image: url("../images/svg/icons/social-youtube.svg");
 }
 
 .footer-contacts-address-phone {
@@ -450,6 +514,12 @@ body {
   margin-bottom: 0;
 }
 
+.catalog-filter-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .hotels-result {
   width: 1060px;
   margin: 0 auto;
@@ -480,6 +550,7 @@ body {
 .hotel-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   list-style: none;
 
   margin: 0;
@@ -487,6 +558,16 @@ body {
   padding: 0;
   padding-bottom: 40px;
   border-bottom: 1px solid #e6e6e6;
+}
+
+.hotel-card {
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.hotel-card-link {
+  text-decoration: none;
 }
 
 .product-card-image {
@@ -504,29 +585,58 @@ body {
   margin-bottom: 16px;
 }
 
-.hotel-card-link {
-  text-decoration: none;
-}
-
 .product-card-description {
+  display: grid;
+  grid-template-rows: min-content 36px 37px;
+  grid-template-columns: 140px 140px;
+  row-gap: 16px;
+  column-gap: 20px;
+
   font-size: 18px;
   line-height: 21px;
   color: #333333;
 }
 
 .product-card-housing-type {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
   margin: 0;
   margin-bottom: 16px;
 }
 
 .product-card-price {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+
   text-align: right;
 
   margin: 0;
   margin-bottom: 16px;
 }
 
+.product-card-button {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  padding: 8px 26px;
+}
+
+.product-card-button-favorite {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  padding: 8px 20px;
+}
+
+.product-card-button-favorited {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  padding: 8px 18px;
+}
+
+
 .rating {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+
   font-size: 16px;
   line-height: 20px;
   text-align: center;
@@ -534,10 +644,13 @@ body {
   background-color: #f2f2f2;
 
   margin: 0;
-  margin-bottom: 16px;
+  padding: 8px 22px;
 }
 
 .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8pxf;
   margin: 0;
   padding: 0;
 
@@ -545,9 +658,18 @@ body {
 }
 
 .pagination-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
   font-weight: 700;
   font-size: 20px;
   line-height: 36px;
+  min-width: 60px;
+  min-height: 60px;
+  margin: 0;
+  margin-right: 8px;
+  padding: 5px;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
