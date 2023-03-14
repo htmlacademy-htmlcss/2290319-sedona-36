@@ -611,18 +611,32 @@ body {
 }
 
 .breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
 }
 
 .breadcrumbs-item {
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
 
   list-style-type: none;
   margin: 0;
+  margin-right: 28px;
   padding: 0;
+}
+
+.breadcrumbs-item::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+
+  background-image: url("../images/svg/icons/arrow.svg");
+  background-color: #ffffff;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .breadcrumbs-link {
@@ -630,6 +644,14 @@ body {
   line-height: 21px;
   color: #ffffff;
   text-decoration: none;
+}
+
+.breadcrumbs-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-link:active {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .catalog-filter {
@@ -643,10 +665,12 @@ body {
   margin: 0;
   margin-right: 70px;
   padding: 0;
+  border: none;
 }
 
 .catalog-filter-title {
   font-size: 20px;
+  font-weight: 700;
   line-height: 24px;
 
   margin: 0;
@@ -675,7 +699,11 @@ body {
 .catalog-filter-controls {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.button-submit {
+  margin-bottom: 32px;
 }
 
 .hotels-result {
@@ -685,10 +713,12 @@ body {
 }
 
 .hotel-sort {
+  display: flex;
   margin-bottom: 40px;
 }
 
 .found {
+  margin-right: auto;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -696,14 +726,81 @@ body {
 }
 
 .control-select {
+  display: block;
+  width: 292px;
+  padding: 14px 20px;
+
   font-size: 18px;
   line-height: 21px;
   color: #333333;
+
+  border: 2px solid #E5E5E5;
+  border-radius: 4px;
+}
+
+.show-type-list {
+  display: flex;
+  margin: 0;
 }
 
 .show-type-item {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  margin-right: 8px;
+  padding: 17px 16px;
   list-style-type: none;
+
+  border: 2px solid #E5E5E5;
+  border-radius: 4px;
 }
+
+.show-type-item:last-child {
+  margin-right: 0;
+}
+
+.show-type-item:hover {
+  border: 2px solid #000000;
+}
+
+.show-type-item:active {
+  border: 2px solid #000000;
+}
+
+.show-type-icon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.show-type-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.show-type-grid::before {
+  width: 16px;
+  height: 14px;
+  background-image: url("../images/svg/icons/show-type-grid.svg");
+}
+
+.show-type-ordered::before {
+  width: 16px;
+  height: 14px;
+  background-image: url("../images/svg/icons/show-type-ordered.svg");
+}
+
+.show-type-listed::before {
+  width: 16px;
+  height: 14px;
+  background-image: url("../images/svg/icons/show-type-listed.svg");
+}
+
 
 .hotel-list {
   display: grid;
